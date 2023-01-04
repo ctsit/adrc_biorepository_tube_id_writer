@@ -1,0 +1,34 @@
+{
+    "name": "ADRC Biorepository Tube ID Writer",
+    "description": "Project-specific module for ADRC tube writing, a minimal fork of SAPDAP",
+    "namespace": "ADRCPipe\\ExternalModule",
+    "framework-version": 9,
+    "redcap-version-min": "12.4.2",
+    "permissions": [
+        "redcap_data_entry_form_top",
+        "redcap_every_page_top"
+    ],
+    "authors": [
+        {
+            "name": "University of Florida CTS-IT",
+            "email": "CTSIT-REDCAP-MODULE-SUPPO@LISTS.UFL.EDU",
+            "institution": "University of Florida - CTSI"
+        }
+    ],
+    "project-settings": [
+        {
+            "key": "enabled_forms",
+            "name": "Enabled Forms",
+            "type": "sub_settings",
+            "repeatable": true,
+            "sub_settings": [
+                {
+                    "key": "show_on_form",
+                    "name": "Show in this form",
+                    "type": "form-list",
+                    "autocomplete": true
+                }
+            ]
+        }
+    ]
+}
