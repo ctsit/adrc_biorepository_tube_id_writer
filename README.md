@@ -1,6 +1,8 @@
 # ADRC Biorepository Tube ID Writer
 
-A REDCap Module built specifically for the University of Florida's ADRC Biorepository project. If you aren't part of UF CTSIT you probably don't want to use this!
+A REDCap Module built specifically for the University of Florida's ADRC Biorepository project. This module reads a subject ID and counts of biospecimen tubes from REDCap a static list of REDCap fields to create tube-count records for each tube type. The code adds static data to generate and set tube IDs in a prescribed order. It also sets default values for tube volume on each tube.
+
+If you aren't part of UF CTSIT you probably don't want to use this!
 
 More generally useful modules:
 
@@ -19,4 +21,10 @@ More generally useful modules:
 
 ## Configuration
 - **Enabled forms**
-    - **Show in this form**: The instrument the following mapping will be applied to.
+    - **Show in this form**: The target instrument where the new data will be written.
+
+## Example
+
+Here is a pictoral example of what the module does.
+
+![Example of this module's function](./images/example.png)
