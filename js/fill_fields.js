@@ -26,7 +26,8 @@ function main() {
         // TODO: alert user if tube_id_field does not exist (i.e. tube_id_field)
         // bug admin to make more fields
         let tube_id_field = `tube_id${tube_num}`;
-        fillIfBlank(tube_id_field, entry["tube_id"]);
+        const tube_id_field_is_blank = fillIfBlank(tube_id_field, entry["tube_id"]);
+        if (!tube_id_field_is_blank) { continue; } // ignore all columns if first one is already filled
 
         let specimen_type_field = `tube_specimen_type${tube_num}`;
         selectFromDropdown(specimen_type_field, sample_metadata[sample_type]["code"]);
@@ -91,12 +92,13 @@ function formatData(data) {
 function fillIfBlank(field_name, value) {
   let $target_field = $(`input[name='${field_name}']`);
   // Don't overwrite field if a value is there
-  if ($target_field.val() != "") { return; }
+  if ($target_field.val() != "") { return false; }
 
   $target_field.val(value);
 
   // trigger field validation
   $target_field.blur();
+  return true;
 }
 
 function selectFromDropdown(key, value) {
