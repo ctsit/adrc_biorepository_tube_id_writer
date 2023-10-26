@@ -27,7 +27,7 @@ function main() {
         // bug admin to make more fields
         let tube_id_field = `tube_id${tube_num}`;
         const tube_id_field_is_blank = fillIfBlank(tube_id_field, entry["tube_id"]);
-        if (!tube_id_field_is_blank) { return; } // ignore all remaining rows if first cell is already filled
+        if (!tube_id_field_is_blank) { throw new Error('tube data present'); } // ignore all remaining rows if first cell is already filled
 
         let specimen_type_field = `tube_specimen_type${tube_num}`;
         selectFromDropdown(specimen_type_field, sample_metadata[sample_type]["code"]);
